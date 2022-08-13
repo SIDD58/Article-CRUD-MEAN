@@ -1,0 +1,80 @@
+<div class="container">
+  <nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
+    <a href="" class="navbar-brand mx-3">SIDD</a>
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Add</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="articles" class="nav-link">Articles</a>
+      </li>
+    </ul>
+  </nav>
+    <div class="container mt-5">
+      <router-outlet>
+      </router-outlet>
+      <!--Things will be renderd after router-outlet not inside router-outlet-->
+    </div>
+</div>
+<!--
+  you not only have to add path component objects to routing module .ts 
+  you also have to import this routing module .ts file in app module .ts
+-->
+<!--
+  if we href attribute entire page is downloaded and angualr app is reinitialized 
+  when you open the network tab all the resources will be downloaded again 
+  that is a overhead
+  if we use router Link only the required things will be downloaded
+  hence single page application
+-->
+<!--
+  Now we can use routerLink as an attribute if it is a simple path 
+  But if we have router parameters we should use property binding and pass route parameters also
+  eg. [routerLink]="['followers',follower.id]"
+-->
+<!--
+  in routerLinkActive="class1 class2"
+  it takes the classes that should be applied when the likn is active 
+  So it applies css of those classes when link is active
+-->
+<!--
+  if we want that our components can use our route parameters 
+  we have to inject ActivatedRoute service class in constrctor 
+  this.var.paramMap , this property is of type observable of paramMap
+  
+  paramMap value has many methods get ,getAll, has , keys
+  params.get('userId') // this is to get value of your parameter userId
+-->
+
+<!--
+  redirectTo and pathMatch property explained
+  https://www.youtube.com/watch?v=h33FECmtLAM
+-->
+<!--
+  ** for all comopnents that are not found 
+-->
+
+<!--
+1) classes in nav element 
+.navbar class in nav is compulsory
+navbar-expand : 
+if you use this is will show navbar horizontally
+if you do not use this it will show navbar vertically 
+
+.navbar-dark is for color of text 
+.bg-dark is for color of background
+.fixed-top to make it fixed navbar 
+
+2) for logo in anchor tag , use navbar-brand
+if logo is not text and image instead use 
+ <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+    </a>
+https://www.w3schools.com/bootstrap5/bootstrap_navbar.php
+
+3) To add links inside the navbar, use either an <ul> element (or a <div>) with class="navbar-nav".
+   Then add <li> elements with a .nav-item class followed by an <a> element with a .nav-link class:
+
+  ml and mr has changed to 
+  ms and me in bootstrap 5 
+-->

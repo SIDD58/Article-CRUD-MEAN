@@ -1,0 +1,33 @@
+<h1>Articles</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      
+      <form action="" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label for="" class="form-label">Title: </label>
+        <input type="text" class="form-control "  [class.notvalid]="titleg?.touched&&titleg?.invalid" formControlName="title">
+        <div *ngIf="titleg?.touched&&titleg?.invalid">
+          <small class="text-danger"*ngIf="titleg?.errors?.['required']">
+            This is a required Field
+          </small>
+          <small class="text-danger"*ngIf="titleg?.errors?.['maxlength']">
+            Character length should be less atmost 20 
+          </small>
+        </div>
+        <label for="" class="form-label">Description: </label>
+        <input type="text" class="form-control" [class.notvalid]="desg?.touched&&desg?.invalid" formControlName="description">
+        <div *ngIf="desg?.touched&&desg?.invalid">
+          <small class="text-danger"*ngIf="desg?.errors?.['required']">
+            This is a required Field
+          </small>
+          <small class="text-danger"*ngIf="desg?.errors?.['minlength']">
+            Character length should be atleast 15 
+          </small>
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
