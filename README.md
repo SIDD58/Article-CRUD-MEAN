@@ -2,6 +2,10 @@
 
 It is MEAN stack application with CRUD operations. Through this application you can create , edit , delete  and get all the list of articles.
 
+## DEMO
+
+![MEAN (1)](https://user-images.githubusercontent.com/42698210/184502151-365641a0-62dc-4c8d-9aeb-ac3d4a225072.gif)
+
 ### Angualr APP working 
 1) Home page shows the list of articles saved and delete all button to delete all the articles from the list.
 1) when you click on one of the article from the list , it shows it's description and provide options to edit and delete the record.
